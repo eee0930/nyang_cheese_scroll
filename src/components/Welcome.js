@@ -1,4 +1,6 @@
-class EyeBlink {
+import { createElement } from "../utils/markup.js";
+
+class Welcome {
   constructor({}) {
     this.$target;
   }
@@ -8,4 +10,4 @@ class EyeBlink {
   };
 }
 
-export default EyeBlink;
+export default Welcome;

@@ -1,4 +1,4 @@
-class EyeBlink {
+class Pass {
   constructor({}) {
     this.$target;
   }
@@ -8,4 +8,4 @@ class EyeBlink {
   };
 }
 
-export default EyeBlink;
+export default Pass;
