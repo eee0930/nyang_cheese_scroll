@@ -48,11 +48,15 @@ class App {
   };
 
   render = () => {
+    const $sectionParent = createElement("div", {
+      className: "root-section-parent",
+    });
     this.sections.forEach((section, i) => {
       const $section = this.createTarget(i);
       section.setTarget($section);
-      this.$Root.appendChild($section);
+      $sectionParent.appendChild($section);
     });
+    this.$Root.appendChild($sectionParent);
   };
 }
 
