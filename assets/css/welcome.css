@@ -1,0 +1,13 @@
+.root-section[data-index="0"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: top 1s ease-out;
+  background-color: antiquewhite;
+}
+
+.root-section.fade-out {
+  top: -400vh;
+}

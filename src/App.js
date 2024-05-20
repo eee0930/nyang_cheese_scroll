@@ -22,12 +22,7 @@ class App {
       const scrollPosition = window.scrollY;
       console.log("현재 스크롤 위치: ", scrollPosition);
       console.log("innerHeight: ", height);
-      console.log(
-        "body.offsetHeight: ",
-        offsetHeight,
-        ", 합 : ",
-        scrollPosition + height
-      );
+      console.log("body.offsetHeight: ", offsetHeight);
     });
   };
 
@@ -41,7 +36,7 @@ class App {
   };
 
   initialize = () => {
-    const welcome = new Welcome({});
+    const welcome = new Welcome({ callback: this.removeComponent });
     const eyeBlink = new EyeBlink({});
     const pass = new Pass({});
     this.sections = [welcome, eyeBlink, pass];
@@ -57,6 +52,15 @@ class App {
       $sectionParent.appendChild($section);
     });
     this.$Root.appendChild($sectionParent);
+  };
+
+  removeComponent = ($target) => {
+    const timeout = setTimeout(() => {
+      $target.remove();
+      this.sections.shift();
+      this.sections[0].setIsInView(true);
+      clearTimeout(timeout);
+    }, 500);
   };
 }
 
