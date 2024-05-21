@@ -15,7 +15,7 @@ class Welcome {
       this.$target.classList.add("fade-out");
       this.unmount(this.$target);
       clearTimeout(timeout);
-    }, 2000);
+    }, 3000);
   };
 
   setTarget = ($target) => {
