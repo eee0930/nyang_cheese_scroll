@@ -1,0 +1,154 @@
+/* cheese duck */
+.container {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1 / 1;
+}
+.duck {
+  position: absolute;
+  background-color: var(--duck);
+}
+.duck.head {
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  border-radius: 48% 48% / 45% 45% 50% 30%;
+}
+.head .eyes-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 11%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  height: 2.5%;
+}
+.eyes-container .eye {
+  position: relative;
+  width: 12%;
+  height: 100%;
+  border-radius: 6px;
+  background-color: var(--duckEye);
+  animation: blink 2.5s infinite;
+}
+.container.smile .eyes-container .eye {
+  width: 14%;
+  height: 120%;
+  border-radius: 50%;
+  animation: unset;
+}
+.container.smile .eyes-container .eye:before,
+.container.smile .eyes-container .eye:after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  background-color: var(--duck);
+}
+.container.smile .eyes-container .eye:before {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+}
+.container.smile .eyes-container .eye:after {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 100%;
+  border-radius: 50% 50% 0 0;
+  top: 30%;
+}
+.head .mouse-countainer {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35%;
+  height: 10%;
+}
+.mouse-countainer .mouse {
+  position: absolute;
+  background-color: rgb(255, 213, 0);
+}
+.mouse.top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  border-radius: 37% 37% / 78% 78% 0 0;
+}
+.mouse.left {
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 80%;
+  border-radius: 50% 50% 69% 80% / 78% 78%;
+}
+.mouse.right {
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 80%;
+  border-radius: 50% 50% 80% 69% / 78% 78%;
+}
+.mouse.in {
+  transition: width 0.5s ease, height 0.5s ease;
+}
+.container.smile .mouse.in {
+  top: 10%;
+  left: 30%;
+  width: 40%;
+  height: 190%;
+  background-color: #fff;
+  border-radius: 0 0 50% 50%;
+}
+.container.smile.nyang .mouse.in {
+  animation: nyang 1s 1s ease 1;
+}
+.duck.body {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  border-radius: 40% 30% 50% 35% / 60% 50%;
+}
+@keyframes nyang {
+  0%,
+  28%,
+  38%,
+  63%,
+  73%,
+  100% {
+    height: 190%;
+  }
+  30%,
+  65% {
+    height: 30%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  38%,
+  48%,
+  78%,
+  88%,
+  98% {
+    margin-top: 0;
+    height: 100%;
+  }
+  40%,
+  80%,
+  90% {
+    margin-top: 9%;
+    height: 10%;
+  }
+}

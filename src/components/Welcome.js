@@ -10,17 +10,21 @@ class Welcome {
   }
 
   initialize = () => {
-    this.$container = createElement("div", { className: "container " });
+    this.$container = createElement("div", { className: "container" });
     const body = this.craeteBody();
     this.$container.append(...body);
   };
 
   render = () => {
+    setTimeout(() => {
+      this.$container.classList.add("smile");
+      this.$container.classList.add("nyang");
+    }, 3500);
     const timeout = setTimeout(() => {
       // this.$target.classList.add("fade-out");
       // this.unmount(this.$target);
       // clearTimeout(timeout);
-    }, 3000);
+    }, 5000);
   };
 
   createEyes = () => {
@@ -44,8 +48,8 @@ class Welcome {
   };
 
   craeteBody = () => {
-    const $body = createElement("div", { className: "welcome body" });
-    const $head = createElement("div", { className: "welcome head" });
+    const $body = createElement("div", { className: "duck body" });
+    const $head = createElement("div", { className: "duck head" });
     $head.append(this.createMouse(), this.createEyes());
     return [$head, $body];
   };
