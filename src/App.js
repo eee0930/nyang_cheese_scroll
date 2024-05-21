@@ -1,6 +1,7 @@
 import Welcome from "./components/Welcome.js";
 import EyeBlink from "./components/EyeBlink.js";
 import Pass from "./components/Pass.js";
+import Singing from "./components/Singing.js";
 import Footer from "./components/Footer.js";
 
 import { createElement } from "./utils/markup.js";
@@ -20,8 +21,9 @@ class App {
     const welcome = new Welcome({ callback: this.removeComponent });
     const eyeBlink = new EyeBlink({});
     const pass = new Pass({});
+    const singing = new Singing({});
     const footer = new Footer({});
-    this.sections = [welcome, eyeBlink, pass, footer];
+    this.sections = [welcome, eyeBlink, pass, singing, footer];
   };
 
   render = () => {
