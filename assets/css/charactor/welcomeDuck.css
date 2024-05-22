@@ -10,14 +10,18 @@
 }
 .duck {
   position: absolute;
+  left: 2%;
   background-color: var(--duck);
+}
+.container.smile.nyang .duck {
+  animation: jelly 0.4s 1.2s ease 2;
 }
 .duck.head {
   left: 0;
   top: 0;
   width: 70%;
   height: 100%;
-  border-radius: 48% 48% / 45% 45% 50% 30%;
+  border-radius: 48% 48% / 45% 45% 47% 40%;
 }
 .head .eyes-container {
   position: absolute;
@@ -114,11 +118,11 @@
   animation: nyang 1s 1s ease 1;
 }
 .duck.body {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 60%;
-  border-radius: 40% 30% 50% 35% / 60% 50%;
+  left: 4%;
+    bottom: 0;
+    width: 93%;
+    height: 60%;
+    border-radius: 45% 49% 50% 45% / 60% 50%;
 }
 @keyframes nyang {
   0%,
@@ -151,4 +155,13 @@
     margin-top: 9%;
     height: 10%;
   }
+}
+
+@keyframes jelly {
+  0%, 100% {transform: scale(1, 1)}
+  30% {transform: scale(1.25, 0.75)}
+  40% {transform: scale(0.75, 1.25)}
+  50% {transform: scale(1.15, 0.85)}
+  65% {transform: scale(.95, 1.05)}
+  75% {transform: scale(1.05, .95)}
 }
